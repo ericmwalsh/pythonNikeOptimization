@@ -9,7 +9,7 @@ cookie = {'RES_TRACKINGID': '849445096449926', 'RES_SESSIONID': '905512340366840
 r = requests.get('http://store.nike.com/us/en_us/pd/free-4-flyknit-running-shoe/pid-1545960/pgid-1481072')
 
 
-reg = re.compile('<input type="hidden" name="action" value="(.*?)"/>[^.]*<input type="hidden" name="lang_locale" value="(.*?)"/>[^.]*<input type="hidden" name="country" value="(.*?)"/>[^.]*<input type="hidden" name="catalogId" value="(.*?)"/>', re.MULTILINE)
+reg = re.compile('<input type="hidden" name="action" value="(.*)"/>[^.]*<input type="hidden" name="lang_locale" value="(.*)"/>[^.]*<input type="hidden" name="country" value="(.*)"/>[^.]*<input type="hidden" name="catalogId" value="(.*)"/>[^.]*<input type="hidden" name="productId" value="(.*)"/>[^.]*<input type="hidden" name="price" value="(.*)"/>[^.]*<input type="hidden" name="line1" value="(.*)"/>[^.]*<input type="hidden" name="line2" value="(.*)"/>', re.MULTILINE)
 matchObj = reg.search(r.text)
 
 for group in matchObj.groups():
